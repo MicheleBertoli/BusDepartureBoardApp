@@ -3,7 +3,7 @@
 describe('Service: Departures', function () {
 
   // load the service's module
-  beforeEach(module('outOfViewApp'));
+  beforeEach(module('busDepartureBoardApp'));
 
   // instantiate service
   var Departures;

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name outOfViewApp.Transport
+ * @name busDepartureBoardApp.Stops
  * @description
- * # Transport
- * Factory in the outOfViewApp.
+ * # Stops
+ * Factory in the busDepartureBoardApp.
  */
-angular.module('outOfViewApp')
-  .factory('Transport', function ($resource, api) {
+angular.module('busDepartureBoardApp')
+  .factory('Stops', function ($resource, api) {
     return $resource(api.url + '/stops/bbox.json', {
       'api_key': api.apiKey,
       'app_id': api.appId

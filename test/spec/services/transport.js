@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: Transport', function () {
+describe('Service: Stops', function () {
 
   // load the service's module
-  beforeEach(module('outOfViewApp'));
+  beforeEach(module('busDepartureBoardApp'));
 
   // instantiate service
-  var Transport;
-  beforeEach(inject(function (_Transport_) {
-    Transport = _Transport_;
+  var Stops;
+  beforeEach(inject(function (_Stops_) {
+    Stops = _Stops_;
   }));
 
   it('should do something', function () {
-    expect(!!Transport).toBe(true);
+    expect(!!Stops).toBe(true);
   });
 
   describe('query', function () {
@@ -47,7 +47,7 @@ describe('Service: Transport', function () {
         });
     }));
     it('should return stops', function () {
-      var stops = Transport.query();
+      var stops = Stops.query();
       $httpBackend.flush();
       expect(stops.length).toBe(1);
     });

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name outOfViewApp.controller:AboutCtrl
+ * @name busDepartureBoardApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the outOfViewApp
+ * Controller of the busDepartureBoardApp
  */
-angular.module('outOfViewApp')
+angular.module('busDepartureBoardApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

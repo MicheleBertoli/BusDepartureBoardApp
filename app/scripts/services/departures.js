@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name outOfViewApp.Departures
+ * @name busDepartureBoardApp.Departures
  * @description
  * # Departures
- * Factory in the outOfViewApp.
+ * Factory in the busDepartureBoardApp.
  */
-angular.module('outOfViewApp')
+angular.module('busDepartureBoardApp')
   .factory('Departures', function ($resource, api) {
     return $resource(api.url + '/stop/:atcocode/live.json', {
       group: 'route',

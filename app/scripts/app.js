@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name outOfViewApp
+ * @name busDepartureBoardApp
  * @description
- * # outOfViewApp
+ * # busDepartureBoardApp
  *
  * Main module of the application.
  */
 angular
-  .module('outOfViewApp', [
+  .module('busDepartureBoardApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

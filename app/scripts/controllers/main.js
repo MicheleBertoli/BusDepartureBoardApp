@@ -2,17 +2,17 @@
 
 /**
  * @ngdoc function
- * @name outOfViewApp.controller:MainCtrl
+ * @name busDepartureBoardApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the outOfViewApp
+ * Controller of the busDepartureBoardApp
  */
-angular.module('outOfViewApp')
-  .controller('MainCtrl', function ($scope, Transport, Departures) {
+angular.module('busDepartureBoardApp')
+  .controller('MainCtrl', function ($scope, Stops, Departures) {
 
     var tilesloaded = function (map) {
       var bounds = getBounds(map);
-      Transport.query(bounds).$promise.then(addMarkers);
+      Stops.query(bounds).$promise.then(addMarkers);
     };
 
     var getBounds = function (map) {
