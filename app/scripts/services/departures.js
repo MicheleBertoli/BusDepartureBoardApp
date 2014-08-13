@@ -2,22 +2,22 @@
 
 /**
  * @ngdoc service
- * @name outOfViewApp.Transport
+ * @name outOfViewApp.Departures
  * @description
- * # Transport
+ * # Departures
  * Factory in the outOfViewApp.
  */
 angular.module('outOfViewApp')
-  .factory('Transport', function ($resource, api) {
-    return $resource(api.url + '/stops/bbox.json', {
+  .factory('Departures', function ($resource, api) {
+    return $resource(api.url + '/stop/:atcocode/live.json', {
+      group: 'route',
       'api_key': api.apiKey,
       'app_id': api.appId
     }, {
-      query: {
+      get: {
         method: 'GET',
-        isArray: true,
         transformResponse: function(data) {
-          return angular.fromJson(data).stops;
+          return angular.fromJson(data).departures;
         }
       }
     });

@@ -8,7 +8,7 @@
  * Controller of the outOfViewApp
  */
 angular.module('outOfViewApp')
-  .controller('MainCtrl', function ($scope, Transport) {
+  .controller('MainCtrl', function ($scope, Transport, Departures) {
 
     var tilesloaded = function (map) {
       var bounds = getBounds(map);
@@ -35,7 +35,7 @@ angular.module('outOfViewApp')
     };
 
     var onClick = function (marker) {
-      console.log(marker);
+      $scope.departures = Departures.get(marker);
     };
 
     $scope.map = {

@@ -31,4 +31,9 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .constant('api', {
+    url: 'https://cors-anywhere.herokuapp.com/transportapi.com/v3/uk/bus',
+    apiKey: 'fed809061ed9956f32d719787fcf8d0e',
+    appId: 'ad0f4534'
   });
