@@ -16,7 +16,7 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach an event listener on tilesloaded to the map', function () {
+    expect(scope.map.events.tilesloaded).toBeDefined();
   });
 });
