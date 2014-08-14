@@ -1,40 +1,46 @@
 <google-map center="map.center" zoom="map.zoom" events="map.events">
   <markers models="map.markers" coords="'self'"	idkey="'atcocode'" click="'onClick'" />
 </google-map>
-<img src="images/ajax-loader.gif" alt="" ng-show="loading">
-<p ng-show="!departures">
-	Click on a bus stop to see departures.
+<p ng-show="loading">
+	<img src="images/ajax-loader.gif" alt=""> Loading, please wait...
 </p>
-<p ng-show="departures && !departures.length">
-	No departures, please try again later.
-</p>
-<table ng-show="departures.length">
-	<tr>
-		<th>
-			Line
-		</th>
-		<th>
-			Direction
-		</th>
-		<th>
-			Expected departure time
-		</th>
-		<th>
-			Best departure estimate
-		</th>
-	</tr>
-	<tr ng-repeat="departure in departures">
-		<td>
-			{{departure.line}}
-		</td>
-		<td>
-			{{departure.direction}}
-		</td>
-		<td>
-			{{departure.expected_departure_time}}
-		</td>
-		<td>
-			{{departure.best_departure_estimate}}
-		</td>
-	</tr>
-</table>
+<div ng-show="!loading">
+	<p ng-show="!departures">
+		Click on a bus stop to see departures.
+	</p>
+	<p ng-show="departures && !departures.length">
+		No departures, please try again later.
+	</p>
+	<div class="table-responsive" ng-show="departures.length">
+		<table class="table">
+			<tr>
+				<th>
+					Line
+				</th>
+				<th>
+					Direction
+				</th>
+				<th class="text-center">
+					Expected departure time
+				</th>
+				<th class="text-center">
+					Best departure estimate
+				</th>
+			</tr>
+			<tr ng-repeat="departure in departures">
+				<td>
+					{{departure.line}}
+				</td>
+				<td>
+					{{departure.direction}}
+				</td>
+				<td class="text-center">
+					{{departure.expected_departure_time}}
+				</td>
+				<td class="text-center">
+					{{departure.best_departure_estimate}}
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

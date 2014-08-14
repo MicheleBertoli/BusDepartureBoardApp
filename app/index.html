@@ -2,10 +2,11 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Bus Departure Board App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -21,13 +22,15 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <h3 class="text-muted">Bus Departure Board App</h3>
-      </div>
-
+      <header>
+        <h1>
+          Bus Departure Board App
+        </h1>
+      </header>
+      <p id="credits">
+        Crafted with <span class="glyphicon glyphicon-heart"></span> by <a href="http://twitter.com/MicheleBertoli">@MicheleBertoli</a>
+      </p>
       <div ng-view=""></div>
-
-      <div class="footer"></div>
     </div>
 
 
@@ -66,12 +69,12 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/stops.js"></script>
-        <script src="scripts/services/departures.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/services/stops.js"></script>
+    <script src="scripts/services/departures.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
