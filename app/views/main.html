@@ -1,4 +1,33 @@
 <google-map center="map.center" zoom="map.zoom" events="map.events">
   <markers models="map.markers" coords="'self'"	idkey="'atcocode'" click="'onClick'" />
 </google-map>
-{{departures}}
+<table ng-show="departures.length">
+	<tr>
+		<th>
+			Line
+		</th>
+		<th>
+			Direction
+		</th>
+		<th>
+			Expected departure time
+		</th>
+		<th>
+			Best departure estimate
+		</th>
+	</tr>
+	<tr ng-repeat="departure in departures">
+		<td>
+			{{departure.line}}
+		</td>
+		<td>
+			{{departure.direction}}
+		</td>
+		<td>
+			{{departure.expected_departure_time}}
+		</td>
+		<td>
+			{{departure.best_departure_estimate}}
+		</td>
+	</tr>
+</table>

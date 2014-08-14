@@ -39,10 +39,10 @@ describe('Service: Departures', function () {
           }
         });
     }));
-    it('should return stops', function () {
+    it('should return departures', function () {
       var departures = Departures.get();
       $httpBackend.flush();
-      expect(departures['76'].length).toBe(1);
+      expect(departures.length).toBe(1);
     });
   });
 
