@@ -18,11 +18,14 @@ angular.module('busDepartureBoardApp')
         method: 'GET',
         isArray: true,
         transformResponse: function(data) {
-          var raw = angular.fromJson(data).departures;
+          data = angular.fromJson(data);
           var departures = [];
-          Object.keys(raw).forEach(function (key) {
-            departures = departures.concat(raw[key]);
-          });
+          if (!data.error) {
+            var raw = data.departures;
+            Object.keys(raw).forEach(function (key) {
+              departures = departures.concat(raw[key]);
+            });
+          }
           return departures;
         }
       }

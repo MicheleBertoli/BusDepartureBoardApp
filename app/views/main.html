@@ -1,6 +1,13 @@
 <google-map center="map.center" zoom="map.zoom" events="map.events">
   <markers models="map.markers" coords="'self'"	idkey="'atcocode'" click="'onClick'" />
 </google-map>
+<img src="images/ajax-loader.gif" alt="" ng-show="loading">
+<p ng-show="!departures">
+	Click on a bus stop to see departures.
+</p>
+<p ng-show="departures && !departures.length">
+	No departures, please try again later.
+</p>
 <table ng-show="departures.length">
 	<tr>
 		<th>

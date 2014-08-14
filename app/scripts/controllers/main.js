@@ -11,6 +11,7 @@ angular.module('busDepartureBoardApp')
   .controller('MainCtrl', function ($scope, Stops, Departures) {
 
     var tilesloaded = function (map) {
+      $scope.loading = true;
       var bounds = getBounds(map);
       Stops.query(bounds).$promise.then(addMarkers);
     };
@@ -28,6 +29,7 @@ angular.module('busDepartureBoardApp')
     };
 
     var addMarkers = function (markers) {
+      $scope.loading = false;
       $scope.map.markers = markers;
       $scope.map.markers.forEach(function (marker) {
         marker.onClick = onClick.bind(null, marker);
@@ -35,7 +37,13 @@ angular.module('busDepartureBoardApp')
     };
 
     var onClick = function (marker) {
-      $scope.departures = Departures.get(marker);
+      $scope.loading = true;
+      Departures.get(marker).$promise.then(showDepartures);
+    };
+
+    var showDepartures = function (departures) {
+      $scope.loading = false;
+      $scope.departures = departures;
     };
 
     $scope.map = {

@@ -19,6 +19,8 @@ describe('Service: Stops', function () {
     var $httpBackend;
     beforeEach(inject(function(_$httpBackend_) {
       $httpBackend = _$httpBackend_;
+    }));
+    it('should return stops', function () {
       $httpBackend
         .expectGET(/transportapi/)
         .respond({
@@ -45,11 +47,19 @@ describe('Service: Stops', function () {
             'distance': 247
           }]
         });
-    }));
-    it('should return stops', function () {
       var stops = Stops.query();
       $httpBackend.flush();
       expect(stops.length).toBe(1);
+    });
+    it('should return empty on error', function () {
+      $httpBackend
+        .expectGET(/transportapi/)
+        .respond({
+          'error': 'problem with live buses feed'
+        });
+      var stops = Stops.query();
+      $httpBackend.flush();
+      expect(stops.length).toBe(0);
     });
   });
 
